@@ -1,8 +1,10 @@
 <header class="bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-16">
-        <a class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
+        <a
+            class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             <span>Categorias</span>
         </a>
@@ -13,41 +15,42 @@
         @livewire('search')
 
         <div class="ms-3 relative">
-            
+
             @auth
                 <x-dropdown align="right" width="48">
-                <x-slot name="trigger">
-                    
-                        <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                            <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                    <x-slot name="trigger">
+
+                        <button
+                            class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                            <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
+                                alt="{{ Auth::user()->name }}" />
                         </button>
-                   
-                </x-slot>
 
-                <x-slot name="content">
-                    <!-- Account Management -->
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Manage Account') }}
-                    </div>
+                    </x-slot>
 
-                    <x-dropdown-link href="{{ route('profile.show') }}">
-                        {{ __('Profile') }}
-                    </x-dropdown-link>
+                    <x-slot name="content">
+                        <!-- Account Management -->
+                        <div class="block px-4 py-2 text-xs text-gray-400">
+                            {{ __('Manage Account') }}
+                        </div>
 
-                    
-
-                    <div class="border-t border-gray-200 dark:border-gray-600"></div>
-
-                    <!-- Authentication -->
-                    <form method="POST" action="{{ route('logout') }}" x-data>
-                        @csrf
-
-                        <x-dropdown-link href="{{ route('logout') }}"
-                                 @click.prevent="$root.submit();">
-                            {{ __('Log Out') }}
+                        <x-dropdown-link href="{{ route('profile.show') }}">
+                            {{ __('Profile') }}
                         </x-dropdown-link>
-                    </form>
-                </x-slot>
+
+
+
+                        <div class="border-t border-gray-200 dark:border-gray-600"></div>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf
+
+                            <x-dropdown-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
+                    </x-slot>
                 </x-dropdown>
             @else
                 <x-dropdown align="right" width="48">

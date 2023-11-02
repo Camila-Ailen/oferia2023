@@ -4,5 +4,5 @@
     <button class="absolute top-0 right-0">
         <x-search size="35" color="white" />
     </button>
-
+    
 </div>
