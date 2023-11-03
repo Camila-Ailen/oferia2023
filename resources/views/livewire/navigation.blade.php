@@ -1,5 +1,7 @@
 <header class="bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-16">
+        
+        {{-- desplegable de categorias --}}
         <a
             class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -9,12 +11,16 @@
             <span>Categorias</span>
         </a>
 
+        {{-- icono de la tienda --}}
         <a href="/" class="mx-6">
             <x-application-mark class="block h-9 w-auto" />
         </a>
+
+        {{-- icono de lupa --}}
         @livewire('search')
 
-        <div class="ms-3 relative">
+        {{-- desplegable de configuracion de usuario --}}
+        <div class="mx-6 relative">
 
             @auth
                 <x-dropdown align="right" width="48">
@@ -70,6 +76,9 @@
                 </x-dropdown>
             @endauth
         </div>
+
+        {{-- carrito de compra --}}
+        @livewire('dropdown-cart')
 
     </div>
 </header>
