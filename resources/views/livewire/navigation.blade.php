@@ -1,6 +1,6 @@
 <header class="bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-16">
-        
+
         {{-- desplegable de categorias --}}
         <a
             class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">

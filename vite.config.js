@@ -14,4 +14,7 @@ export default defineConfig({
             ],
         }),
     ],
+    build: {
+        outDir: 'dist', // Esta es la propiedad que indica el directorio de salida
+    },
 });
